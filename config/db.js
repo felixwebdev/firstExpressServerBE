@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export const connectDB = async () => {
-    const GODB_URI = 'mongodb+srv://TranKhanhBE:Myduyenn95%25@cluster0.hzjzvm5.mongodb.net';
+    const GODB_URI = process.env.MONGODB_URI;
 
     try {
     await mongoose.connect(GODB_URI);
